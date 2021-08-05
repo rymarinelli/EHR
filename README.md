@@ -19,9 +19,11 @@ It may be a bit more difficult to configure for your machine. However, I added s
   Please note within Scripts there is a tests directory that provides unit testing for the data manipulation questions. 
   </h3>
   The syntax for using the testing suite is the following:
+  <table>
   <code>
       pytest -v -m Question_One
       pytest -v -m Question_Two
       pytest -v -m Question_Three
        ....
   </code>
+  </table>
