@@ -20,10 +20,10 @@ It may be a bit more difficult to configure for your machine. However, I added s
   </h3>
   The syntax for using the testing suite is the following:
   <table>
-  <code>
+  <code style = "display:block" >
       pytest -v -m Question_One
       pytest -v -m Question_Two
       pytest -v -m Question_Three
        ....
   </code>
-  </table>
+  
