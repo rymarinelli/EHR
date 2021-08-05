@@ -18,8 +18,10 @@ It may be a bit more difficult to configure for your machine. However, I added s
  <h3>
   Please note within Scripts there is a tests directory that provides unit testing for the data manipulation questions. 
   </h3>
-  The syntax for using the testing suite passing pytest -v -m Question_<strong><Question Number as Text></strong> Here is an example. 
+  The syntax for using the testing suite passing pytest -v -m Question_<strong>Question Number as Text</strong> Here is an example. 
   <code>
       pytest -v -m Question_One
   </code>
   
+<h2> Report </h2>
+This section will contain the report for the analysis and is based off of the ipynb file. The script file is meant for easier distribuiton and to provide a testing mechanism with pytest for unit testing. The report is stored as a pdf. 
