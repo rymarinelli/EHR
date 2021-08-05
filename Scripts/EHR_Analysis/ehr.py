@@ -7,21 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/10z6Yw91poLoja5WO9cm8YcSJ4IiVR4rb
 """
 
-!pip
-install
-pandasql
-!pip
-install
-pandas
-!pip
-install
-plotly
-!pip
-install
-statsmodels
-!pip
-install
-pytest
+
 
 import pandasql as ps
 import pandas as pd
@@ -47,11 +33,7 @@ try:
 #
 except ImportError:
     import os
-    !pip
-    install
-    statsmodels - -upgrade
-    logging.error('Please restart runtime. Statsmodels may need to be updated')
-    os.kill(os.getpid(), 9)
+    raise('Please restart runtime. Statsmodels may need to be updated')
 
 
 class FileNotAdded(Exception):
