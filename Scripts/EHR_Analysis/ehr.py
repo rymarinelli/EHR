@@ -68,11 +68,19 @@ def load_data(file):
 
         elif (file == "observations"):
             df = pd.read_parquet(f"https://github.com/rymarinelli/EHR/blob/main/data/{file}.parquet?raw=true")
+            conditions = pd.read_parquet(f"https://github.com/rymarinelli/EHR/blob/main/data/conditions.parquet?raw=true")
+
+            conditions = conditions[ ( conditions['DESCRIPTION'] == "Alzheimer's disease (disorder)")].drop_duplicates()
+
+            df['PATIENT_FILTER'] = df.PATIENT.isin(conditions['PATIENT'])
+            df = df[df['PATIENT_FILTER'] == True]
+            df = df.drop(['PATIENT_FILTER'], axis=1)
+
             df['DATE'] = pd.to_datetime(df['DATE'])
             df = df[df['DESCRIPTION'] == "Total score [MMSE]"].sort_values(by='DATE')
             df['YEAR'] = pd.DatetimeIndex(df['DATE']).year
             df.VALUE = df.VALUE.astype("float")
-            return df
+            return df 
 
         # Files that do not require additional pre-processing are the default case here
         else:
@@ -161,7 +169,7 @@ age = age.rename(columns={"Age": "Frequency"})
 age['Age'] = age.index
 logging.info(f"Question 3: {age}")
 
-fig = px.bar(age, x='Age', y="Frequency")
+fig = px.bar(age, x='Age', y="Frequency", title="Age At First AD Diagnosis")
 fig.show()
 # Right skew mean is somewhere around 78
 
@@ -183,8 +191,8 @@ age_statistics = age_statistics(np.array(ps.sqldf('''
 logging.info(f'Question 4 {age_statistics.std}')
 logging.info(f'Question 4 {age_statistics.mean}')
 
-age_statistics.std
-age_statistics.mean
+print(age_statistics.std)
+print(age_statistics.mean)
 
 """#Question 5"""
 
@@ -210,7 +218,7 @@ observation_plot = ps.sqldf(''' SELECT YEAR, CAST(AVG(VALUE) AS FLOAT )AS VALUE
 
 logging.info(f"Question 6: {observation_plot}")
 
-fig = px.line(data_frame=observation_plot, x="YEAR", y="VALUE")
+fig = px.line(data_frame=observation_plot, x="YEAR", y="VALUE", title = "Average MMSE Per Year of AD Patients")
 fig.show()
 
 type(observation_plot['VALUE'])
@@ -248,7 +256,7 @@ age_viz = ps.sqldf("""
 # When Age_Split = 0, they are under 75
 # When Age_split = 1, they are 75 or over
 fig = px.scatter(age_viz, x="YEAR", y="VALUE", title='Age of AD Diagnosis', facet_col="Age_Split", trendline="lowess",
-                 color="Age_Split")
+                 color="Age_Split", title='Age of AD Diagnosis If Over or Under 75 ')
 fig.show()
 
 """#Question 8"""
