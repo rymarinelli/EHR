@@ -18,7 +18,7 @@ It may be a bit more difficult to configure for your machine. However, I added s
  <br></br>
  To download this repo, you may use the git command line. Please use <code> git clone git@github.com:rymarinelli/EHR.git </code> in a directory in your file system for the files to downloaded into. 
  
- Please navigate to <code> ~/EHR/Scripts/EHR_Analysis/ </code> in your file system and run the <code> ehr.py </code> script to produce the visualizations. They should open in your default browser. 
+ Please navigate to <code> ~/EHR/Scripts/EHR_Analysis </code> in your file system and run the <code> ehr.py </code> script to produce the visualizations. They should open in your default browser. 
  
  
  
