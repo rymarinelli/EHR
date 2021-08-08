@@ -255,7 +255,7 @@ age_viz = ps.sqldf("""
 
 # When Age_Split = 0, they are under 75
 # When Age_split = 1, they are 75 or over
-fig = px.scatter(age_viz, x="YEAR", y="VALUE", title='Age of AD Diagnosis', facet_col="Age_Split", trendline="lowess",
+fig = px.scatter(age_viz, x="YEAR", y="VALUE", facet_col="Age_Split", trendline="lowess",
                  color="Age_Split", title='Age of AD Diagnosis If Over or Under 75 ')
 fig.show()
 
