@@ -14,7 +14,9 @@ It may be a bit more difficult to configure for your machine. However, I added s
  <code>
       pip install statsmodels --upgrade
     </code>
-    
+ 
+ To download this repo, you may use the git command line. Please use <code> git clone git@github.com:rymarinelli/EHR.git </code>
+ 
  <h4>
   Please note within Scripts there is a tests directory that provides unit testing for the data manipulation questions. 
   </h4>
