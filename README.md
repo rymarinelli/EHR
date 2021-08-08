@@ -15,15 +15,25 @@ It may be a bit more difficult to configure for your machine. However, I added s
       pip install statsmodels --upgrade
     </code>
  
- To download this repo, you may use the git command line. Please use <code> git clone git@github.com:rymarinelli/EHR.git </code>
+ <br></br>
+ To download this repo, you may use the git command line. Please use <code> git clone git@github.com:rymarinelli/EHR.git </code> in a directory in your file system to copy into. 
+ 
+ Please navigate to <code> ~/EHR/Scripts/EHR_Analysis/ </code> in your file system and run the <code> ehr.py </code> script to produce the visualizations. They should open in your default browser. 
+ 
+ 
  
  <h4>
   Please note within Scripts there is a tests directory that provides unit testing for the data manipulation questions. 
   </h4>
-  The syntax for using the testing suite passing pytest -v -m Question_<strong>Question Number as Text</strong> Here is an example. 
+  
+  Within your cloned directory, navigate to <code>  ~/EHR/Scripts/EHR_Analysis/tests </code>
+  
+  The syntax for using the testing suite for pytest is: pytest -v -m Question_<strong>#</strong> Here is an example. 
   <code>
       pytest -v -m Question_One
   </code>
+  
+  You may also run <code pytest data_test.py </code> to get reporting for all the tests instead of just a particular subset of marked ones. 
   
 <h2> Report </h2>
 This section will contain the report for the analysis and is based off of the ipynb file. The script file is meant for easier distribuiton and to provide a testing mechanism with pytest for unit testing. The report is stored as a pdf. 
