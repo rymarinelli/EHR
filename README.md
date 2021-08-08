@@ -33,7 +33,7 @@ It may be a bit more difficult to configure for your machine. However, I added s
       pytest -v -m Question_One
   </code>
   
-  You may also run <code pytest data_test.py </code> to get reporting for all the tests instead of just a particular subset of marked ones. 
+  You may also run <code> pytest data_test.py </code> to get reporting for all the tests instead of just a particular subset of marked ones. 
   
 <h2> Report </h2>
 This section will contain the report for the analysis and is based off of the ipynb file. The script file is meant for easier distribuiton and to provide a testing mechanism with pytest for unit testing. The report is stored as a pdf. 
